@@ -1,0 +1,23 @@
+{
+  "name": "mas_global",
+  "version": "1.0.0",
+  "description": "automation_test",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^6.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oluna1985/MasGlobal.git"
+  },
+  "author": "Ornella_Luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oluna1985/MasGlobal/issues"
+  },
+  "homepage": "https://github.com/oluna1985/MasGlobal#readme"
+}
