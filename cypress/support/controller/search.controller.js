@@ -16,7 +16,7 @@ function searching(value) {
     search.searchButton().should('be.visible').should('have.value', 'Google Search') // validate visible and text button
     search.felingButton().should('be.visible').should('have.value', "I'm Feeling Lucky") // validate visible and text button
     search.inputSearch().should('have.value', '') //inputs is emtpy
-    search.inputSearch().click()
+    search.inputSearch().wait(1000).click()
     search.inputSearch().type(value) // enter a value in input
 }
 
@@ -25,7 +25,7 @@ Cypress.Commands.add('searchPage', () => {
     //go to page search google
     search.goToSearch()
     search.home()
-    cy.url().should('eq', 'https://www.google.com/')
+    cy.url().should('eq', Cypress.config('baseUrl') + '/')
 
 })
 
@@ -34,7 +34,7 @@ Cypress.Commands.add('searchPage', () => {
 */
 Cypress.Commands.add('search', (value, suggestion) => {
     searching(value) //go to page search google
-    cy.url().should('eq', 'https://www.google.com/')
+    cy.url().should('eq', Cypress.config('baseUrl') + '/')
     countResults() // count results of suggestions
     if (suggestion) {
         search.suggestionsResult().first().click() //click on button search in container result
@@ -47,8 +47,8 @@ Cypress.Commands.add('search', (value, suggestion) => {
             .should('be.visible').click() //click on button search in container result
         result.search(value) // validate content of input is the same to searched
     }
-    result.titleResult().first().click() // Click on of the first result
-    cy.url().should('not.eq', 'https://www.google.com/')
+    result.titleResult().wait(1000).first().click() // Click on of the first result
+    cy.url().should('not.eq', Cypress.config('baseUrl') + '/')
 })
 
 /*Verify search can clean after input value

@@ -1,6 +1,6 @@
 class homePage{
     visit() {
-        return cy.visit('https://google.com', {
+        return cy.visit('/', {
             onBeforeLoad(win) {
                 Object.defineProperty(win.navigator, 'language', { value: 'en-AU' });
                 Object.defineProperty(win.navigator, 'languages', { value: ['en'] });
@@ -12,7 +12,7 @@ class homePage{
         });
      }
      logo() {
-        return cy.get('#hplogo').find('img').eq(1)
+        return cy.get('#hplogo', {timeout:2000}).find('img').eq(1)
      }
      labelLanguage(){
         
