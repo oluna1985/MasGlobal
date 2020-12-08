@@ -16,7 +16,7 @@ function searching(value) {
     search.searchButton().should('be.visible').should('have.value', 'Google Search') // validate visible and text button
     search.felingButton().should('be.visible').should('have.value', "I'm Feeling Lucky") // validate visible and text button
     search.inputSearch().should('have.value', '') //inputs is emtpy
-    search.inputSearch().wait(1000).click()
+    search.inputSearch().click()
     search.inputSearch().type(value) // enter a value in input
 }
 
@@ -41,13 +41,12 @@ Cypress.Commands.add('search', (value, suggestion) => {
         cy.url().should('have.contain', value.replace(/\s+/g, "+")) //Verify if value have in the url
     } else {
         search.searchButtonContain()
-            .wait(1000)
             .should('have.value', 'Google Search')
             .scrollIntoView({ offset: { top: 150, left: 0 } })
             .should('be.visible').click() //click on button search in container result
         result.search(value) // validate content of input is the same to searched
     }
-    result.titleResult().wait(1000).first().click() // Click on of the first result
+    result.titleResult().first().click() // Click on of the first result
     cy.url().should('not.eq', Cypress.config('baseUrl') + '/')
 })
 

@@ -12,7 +12,7 @@ class homePage{
         });
      }
      logo() {
-        return cy.get('#hplogo', {timeout:2000}).find('img').eq(1)
+        return cy.get('#hplogo').find('img').eq(1)
      }
      labelLanguage(){
         

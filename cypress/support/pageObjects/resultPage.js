@@ -3,7 +3,7 @@ import searchPage from "./searchPage"
 class resultPage extends searchPage{ 
 
      titleResult(){
-          return cy.get('.LC20lb > span')
+          return cy.get('h3').find('span')
      }
 
      search(value){

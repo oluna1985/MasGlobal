@@ -15,7 +15,7 @@ class searchPage extends homePage {
         return cy.get('input[type=submit]').eq(3)
     }
     suggestionsResult() {
-        return cy.get('ul li', {timeout:3000})
+        return cy.get('ul li')
     }
     remove(){
         cy.get('.lBbtTb > svg').click()

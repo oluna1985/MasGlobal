@@ -1,4 +1,5 @@
 {
     "chromeWebSecurity": false, 
-    "baseUrl": "https://www.google.com"
+    "baseUrl": "https://www.google.com",
+    "defaultCommandTimeout": 10000
 }
