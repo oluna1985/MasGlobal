@@ -1,6 +1,7 @@
 class homePage{
     visit() {
         return cy.visit('/', {
+           //Add this method because my navigator open in spanish
             onBeforeLoad(win) {
                 Object.defineProperty(win.navigator, 'language', { value: 'en-AU' });
                 Object.defineProperty(win.navigator, 'languages', { value: ['en'] });

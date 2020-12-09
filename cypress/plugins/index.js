@@ -18,6 +18,7 @@
 // cypress/plugins/index.js
 // cypress/plugins/index.js
 module.exports = (on, config) => {
+  //Add this configuration because my navigator open in spanish when redirect to the other page
   on('before:browser:launch', (browser, launchOptions) => {
     if (browser.family === 'chromium' && browser.name !== 'electron') {
       launchOptions.preferences.default.intl = { accept_languages: "en-AU" }
